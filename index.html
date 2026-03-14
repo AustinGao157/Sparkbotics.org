@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>My Website</title>
     <link rel="icon" type="image/png" href="image/favicon.png">
 
     <style>
         .tabs-container{
-    width: 200px;
-    border: 2px solid black;
-    overflow-x: auto;
-    white-space: nowrap;
-}
+            width: 200px;
+            border: 2px solid black;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
 
-.tab-item{
-    display: inline-block;
-    font-size: 100px;
-}
-        
+        .tab-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab-item{
+            display: inline-block;
+            font-size: 100px;
+        }
+    </style>
+
 </head>
-    
+
 <body>
-    <div class="tabs-container">
+
+<div class="tabs-container">
   <ul class="tab-list">
-      <ul style="font-size: 100px;">
     <li class="tab-item active" data-tab="tab1">Home</li>
     <li class="tab-item" data-tab="tab2">Blog</li>
-  </style>
   </ul>
-  <div id="tab1" class="tab-panel active">
-    <!-- Content for Tab 1 -->
-  </div>
-  <div id="tab2" class="tab-panel">
-    <!-- Content for Tab 2 -->
-  </div>
+
+  <div id="tab1" class="tab-panel active"></div>
+  <div id="tab2" class="tab-panel"></div>
 </div>
-    <div2>
-        <h1>Hello World!</h1>
-    </div2>
+
+<div>
+    <h1>Hello World!</h1>
+</div>
+
 </body>
 </html>
