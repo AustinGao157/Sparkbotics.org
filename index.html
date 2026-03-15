@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Website</title>
-    <link rel="icon" type="image/png" href="image/favicon.png">
+<title>My Website</title>
+<link rel="icon" type="image/png" href="image/favicon.png">
 
-    <style>
-        .tabs-container{
-            width: 1900px;
-            border: 2px solid black;
-            white-space: nowrap;
-        }
+<style>
 
-        .tab-list{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .tabs-container{
-    background-color: #00AEEF;
+body{
+    margin:0;
+    font-family: Arial;
 }
 
-        .tab-item{
-    padding-left: 400px;
+/* top tab bar */
+.tabs-container{
+    width:100%;
+    border-bottom:2px solid black;
+    background-color:black;
 }
-    .tab-list{
 
-    .tab-item{
-    display: inline-block;
-    font-size: 100px;
-    color: #FFFFFF;
-    margin-right: 190px;
-}      
-    .tabs-container{
-    display: flex;
-    justify-content: flex-end;
+/* tab list */
+.tab-list{
+    list-style:none;
+    padding:20px;
+    margin:0;
 }
-    </style>
- 
+
+/* tab buttons */
+.tab-item{
+    display:inline-block;
+    font-size:40px;
+    color:white;
+    margin-right:40px;
+    cursor:pointer;
+}
+
+/* active tab */
+.tab-item.active{
+    text-decoration:underline;
+}
+
+/* tab content */
+.tab-panel{
+    display:none;
+    padding:40px;
+}
+
+/* visible tab */
+.tab-panel.active{
+    display:block;
+}
+
+</style>
 </head>
 
 <body>
@@ -47,12 +60,46 @@
     <li class="tab-item active" data-tab="tab1">Home</li>
     <li class="tab-item" data-tab="tab2">Blog</li>
   </ul>
-
-  <div id="tab1" class="tab-panel active"></div>
-  <div id="tab2" class="tab-panel"></div>
 </div>
 
-<div>
+<!-- TAB CONTENT -->
+
+<div id="tab1" class="tab-panel active">
+    <h1>Hello World!</h1>
+    <p>Welcome to the home page.</p>
+</div>
+
+<div id="tab2" class="tab-panel">
+    <h1>Blog</h1>
+    <p>This is the blog section.</p>
+</div>
+
+<script>
+
+/* get tabs and panels */
+const tabs = document.querySelectorAll(".tab-item");
+const panels = document.querySelectorAll(".tab-panel");
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+        const target = tab.dataset.tab;
+
+        /* remove active from all */
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+
+        /* activate clicked tab */
+        tab.classList.add("active");
+        document.getElementById(target).classList.add("active");
+
+    });
+});
+
+</script>
+
+</body>
+</html>
     <h1>Hello World!</h1>
 </div>
 
